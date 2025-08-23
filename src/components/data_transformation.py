@@ -27,24 +27,18 @@ class DataTransformation:
             numerical_features = ['fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides', 
                                   'free sulfur dioxide', 'total sulfur dioxide', 'density', 'pH', 'sulphates', 'alcohol']
             
-            derived_feature = ['is_good']  
+            # derived_feature = ['is_good']  
 
             numerical_pipeline = Pipeline(steps=[
                 ('imputer', SimpleImputer(strategy='median')),
                 ('scaler', StandardScaler())
             ])
             
-            feature_pipeline = Pipeline(steps=[
-                ('feature_engineering', FeatureEngineering())
-            ])
 
-
-            logging.info(f"Derived column: {derived_feature}")
             logging.info(f"Numerical columns: {numerical_features}")
 
             preprocessor=ColumnTransformer(
                 [
-                    ("Feature_pipelines",feature_pipeline,derived_feature),
                     ("num_pipeline",numerical_pipeline,numerical_features)
                 ])
 
@@ -62,15 +56,17 @@ class DataTransformation:
             logging.info("Read train and test data completed")
 
             feature_engineer = FeatureEngineering()
-            train_df = feature_engineer.fit_transform(train_df)
+            train_df = feature_engineer.transform(train_df)
             test_df = feature_engineer.transform(test_df)
 
-            preprocessing_obj = self.get_data_transformer_object()
+            logging.info("Feature engineering completed (created 'is_good' column)")
             
             logging.info(f"train df: {train_df.head(5)}")
             logging.info(f"value count is_good: {train_df['is_good'].value_counts()}")
             logging.info(f"test df: {test_df.head(5)}")
             logging.info(f"value count is_good: {test_df['is_good'].value_counts()}")
+
+            preprocessing_obj = self.get_data_transformer_object()
 
 
             target_column = "is_good"

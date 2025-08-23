@@ -11,16 +11,16 @@ from components.data_transformation import DataTransformationConfig
 from components.data_transformation import DataTransformation
 
 @dataclass
-class DataIngestinConfig:   # defining class DataIgestionConfig 
+class DataIngestionConfig:   # defining class DataIgestionConfig 
     train_data_path:str = os.path.join('artifacts',"train.csv") # variable to store file path for training data
     test_data_path:str = os.path.join('artifacts',"test.csv")# variable to store file path for test data
     raw_data_path:str = os.path.join('artifacts',"data.csv")# variable to store file path fro original data
 
 
 
-class DataIgestion: # defining class DataIngestion
+class DataIngestion: # defining class DataIngestion
     def __init__(self): # constructor
-        self.ingestion_config = DataIngestinConfig() # creating an pbject of class DataIngestionConfig
+        self.ingestion_config = DataIngestionConfig() # creating an pbject of class DataIngestionConfig
 
     def initiate_data_ingestion(self): # function for initaiting data ingestion
         logging.info("Entered the data ingestion component")
@@ -56,7 +56,7 @@ class DataIgestion: # defining class DataIngestion
         
 
 if __name__ == "__main__":
-    obj = DataIgestion()
+    obj = DataIngestion()
     train_data, test_data = obj.initiate_data_ingestion()
 
     data_transformation = DataTransformation()
