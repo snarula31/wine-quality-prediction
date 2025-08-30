@@ -11,6 +11,7 @@ from sklearn.preprocessing import StandardScaler
 from exception import CustomException
 from logger import logging
 from .feature_engineering import FeatureEngineering
+from imblearn.combine import SMOTETomek
 
 from utils import save_object
 
@@ -87,6 +88,10 @@ class DataTransformation:
             
             input_feature_train_arr = preprocessing_obj.fit_transform(input_feature_train_df)
             input_feature_test_arr = preprocessing_obj.transform(input_feature_test_df)
+
+            # Apply Sampling technique(SMOTETomek) to the training data
+            # smote_tomek = SMOTETomek()
+            # input_feature_train_arr, target_feature_train_df = smote_tomek.fit_resample(input_feature_train_arr, target_feature_train_df)
 
             train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)]
             test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
