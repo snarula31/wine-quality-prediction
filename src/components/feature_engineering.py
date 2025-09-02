@@ -18,7 +18,7 @@ class FeatureEngineering(BaseEstimator,TransformerMixin):
         try:
             if 'quality' in df.columns:   
                 # New target variable for binary classification instead of regression/multi class classification  
-                df['is_good'] = df['quality'].apply(lambda x: 1 if x >=7 else 0) 
+                df['is_good'] = df['quality'].apply(lambda x: 1 if x >=6 else 0) 
             return df
         except Exception as e:
             logging.error("Error occurred during feature engineering")
