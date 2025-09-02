@@ -8,4 +8,10 @@ xgboost
 lightgbm
 dill
 imbalanced-learn
+fastapi
+uvicorn[standard]
+pydantic
+python-multipart
+flask
+streamlit
 # -e .

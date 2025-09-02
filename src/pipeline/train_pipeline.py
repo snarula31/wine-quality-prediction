@@ -29,7 +29,7 @@ class TrainingPipeline:
 
             # Step 4: Model Evaluation
             model_evaluation = ModelEvaluation()
-            model_evaluation.initiate_model_evaluation(train_arr, test_arr, model)
+            model_evaluation.initiate_model_evaluation(train_arr, test_arr, model_path=model_trainer.model_trainer_config.trained_model_file_path)
 
             logging.info("Training pipeline completed successfully")
 

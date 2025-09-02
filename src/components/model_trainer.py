@@ -20,7 +20,7 @@ from utils import save_object,evaluate_models
 
 @dataclass
 class ModelTrainerConfig:
-    trained_model_file_path = os.path.join("artifacts", "model.pkl")
+    trained_model_file_path = os.path.join("artifacts", "model1.pkl")
 
 class ModelTrainer:
     def __init__(self):
@@ -48,28 +48,28 @@ class ModelTrainer:
             
             params = {
                 "Logistic Regression": {
-                    'class_weight': ['balanced', None],
+                    # 'class_weight': ['balanced', None],
 
                 },
                 "Random Forest": {
                     "n_estimators": [100, 150, 200, 250],
                     "max_depth": [10, 15, 20, 25],
-                    "class_weight": ['balanced', None]
+                    # "class_weight": ['balanced', None]
                 },
                 "Decision Tree": {
                     "splitter": ["best", "random"],
                     "max_depth": [10, 15, 20, 25],
-                    "class_weight": ['balanced', None]
+                    # "class_weight": ['balanced', None]
                 },
                 "LightGBM": {
                     "n_estimators": [100, 150, 200, 250],
                     "max_depth": [10, 15, 20, 25],
-                    "class_weight": ['balanced', None]
+                    # "class_weight": ['balanced', None]
                 },
                 "XGBoost": {
                     "n_estimators": [100, 150, 200, 250],
                     "max_depth": [10, 15, 20, 25],
-                    "class_weight": ['balanced', None]
+                    # "class_weight": ['balanced', None]
                 },
                 "KNN": {
                     "n_neighbors": [3, 5, 7]
@@ -77,7 +77,7 @@ class ModelTrainer:
                 "SVC": {
                     "C": [0.1, 1, 10],
                     "gamma": [0.1, 1, 10],
-                    "class_weight": ['balanced', None]
+                    # "class_weight": ['balanced', None]
                 }
             }
 
@@ -92,7 +92,7 @@ class ModelTrainer:
 
             if best_model_score < 0.6:
                 raise CustomException("No best model found")
-            logging.info(f"Best model found on both training and testing dataset: {best_model_name}")
+            logging.info(f"Best model1 found on both training and testing dataset: {best_model_name}")
 
             save_object(
                 file_path=self.model_trainer_config.trained_model_file_path,

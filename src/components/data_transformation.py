@@ -17,7 +17,7 @@ from utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path: str = os.path.join('artifacts', 'preprocessor.pkl')
+    preprocessor_obj_file_path: str = os.path.join('artifacts', 'preprocessor1.pkl')
 
 class DataTransformation:  
     def __init__(self):
@@ -90,8 +90,9 @@ class DataTransformation:
             input_feature_test_arr = preprocessing_obj.transform(input_feature_test_df)
 
             # Apply Sampling technique(SMOTETomek) to the training data
-            # smote_tomek = SMOTETomek()
-            # input_feature_train_arr, target_feature_train_df = smote_tomek.fit_resample(input_feature_train_arr, target_feature_train_df)
+            logging.info("Applying SMOTETomek to the training data")
+            smote_tomek = SMOTETomek()
+            input_feature_train_arr, target_feature_train_df = smote_tomek.fit_resample(input_feature_train_arr, target_feature_train_df)
 
             train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)]
             test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]

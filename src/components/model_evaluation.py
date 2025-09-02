@@ -48,7 +48,7 @@ class ModelEvaluation:
             logging.info(f"Precision: {precision:.4f}")
             logging.info(f"Recall: {recall:.4f}")
             logging.info(f"Area Under PR Curve (AUPRC): {auprc:.4f}")
-            logging.info("="*20)
+            logging.info("="*50)
 
             return f1, precision, recall, auprc
             
