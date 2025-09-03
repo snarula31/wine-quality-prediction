@@ -3,9 +3,9 @@ import sys
 import numpy as np
 import pandas as pd
 
-from exception import CustomException
-from logger import logging
-from utils import load_object,evaluate_models,save_object
+from src.exception import CustomException
+from src.logger import logging
+from src.utils import load_object,evaluate_models,save_object
 
 class PredictionPipeline:
     def __init__(self): 

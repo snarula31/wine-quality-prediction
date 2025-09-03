@@ -24,7 +24,7 @@ st.set_page_config(
 # --- Application Title and Description ---
 st.title("🍷 Wine Quality Prediction")
 st.markdown("""
-This application predicts the quality of a wine (`Great` vs. `Normal`) based on its physicochemical properties.
+This application predicts the quality of a wine (`Good` vs. `Normal`) based on its physicochemical properties.
 Please adjust the sliders on the left to input the wine's features and click 'Predict' to see the result.
 """)
 
@@ -81,7 +81,7 @@ if st.button("Predict Wine Quality"):
         # Display the result
         st.subheader("Prediction Result")
         if prediction == 1:
-            st.success("The wine is predicted to be of **Great Quality**! 🎉")
+            st.success("The wine is predicted to be of **Good Quality**! 🎉")
         else:
             st.warning("The wine is predicted to be of **Normal Quality**. 🙂")
     

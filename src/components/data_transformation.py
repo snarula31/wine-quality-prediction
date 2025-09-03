@@ -8,12 +8,12 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
-from exception import CustomException
-from logger import logging
-from .feature_engineering import FeatureEngineering
+from src.exception import CustomException
+from src.logger import logging
+from src.components.feature_engineering import FeatureEngineering
 from imblearn.combine import SMOTETomek
 
-from utils import save_object
+from src.utils import save_object
 
 @dataclass
 class DataTransformationConfig:

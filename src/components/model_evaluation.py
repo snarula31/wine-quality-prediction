@@ -6,10 +6,10 @@ import numpy as np
 from sklearn.metrics import (f1_score, precision_score, recall_score, 
                              roc_auc_score, precision_recall_curve, auc)
 
-from exception import CustomException
-from logger import logging
+from src.exception import CustomException
+from src.logger import logging
 
-from utils import load_object
+from src.utils import load_object
 
 
 class ModelEvaluation:

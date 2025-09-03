@@ -6,8 +6,8 @@ from components.data_transformation import DataTransformation
 from components.model_trainer import ModelTrainer
 from components.model_evaluation import ModelEvaluation
 
-from exception import CustomException
-from logger import logging
+from src.exception import CustomException
+from src.logger import logging
 
 
 class TrainingPipeline:
