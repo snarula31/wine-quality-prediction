@@ -1,10 +1,10 @@
 import sys
 import os
 
-from components.data_ingestion import DataIngestion
-from components.data_transformation import DataTransformation
-from components.model_trainer import ModelTrainer
-from components.model_evaluation import ModelEvaluation
+from src.components.data_ingestion import DataIngestion
+from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
+from src.components.model_evaluation import ModelEvaluation
 
 from src.exception import CustomException
 from src.logger import logging
@@ -40,6 +40,6 @@ class TrainingPipeline:
 
 
 
-if __name__ == "__main__":
-    pipeline = TrainingPipeline()
-    pipeline.run()
+# if __name__ == "__main__":
+#     pipeline = TrainingPipeline()
+#     pipeline.run()
