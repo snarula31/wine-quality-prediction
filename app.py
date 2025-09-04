@@ -3,7 +3,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import pandas as pd
-from src.pipeline.prediction_pipeline import PredictionPipeline
+from pipeline.prediction_pipeline import PredictionPipeline
 
 # --- 1. Define Data Schema ---
 class WineData(BaseModel):
@@ -73,7 +73,7 @@ def read_root():
 # import pandas as pd
 
 # from sklearn.preprocessing import StandardScaler
-# from src.pipeline.prediction_pipeline import PredictionPipeline, CustomData
+# from pipeline.prediction_pipeline import PredictionPipeline, CustomData
 
 # application = Flask(__name__)
 

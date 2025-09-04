@@ -2,7 +2,7 @@
 
 import streamlit as st
 import pandas as pd
-from src.pipeline.prediction_pipeline import PredictionPipeline
+from pipeline.prediction_pipeline import PredictionPipeline
 
 # --- Caching the Prediction Pipeline ---
 # This is a key performance optimization. 

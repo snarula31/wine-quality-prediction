@@ -12,15 +12,15 @@ from sklearn.svm import SVC
 from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score,f1_score
 
 
-from src.exception import CustomException
-from src.logger import logging
+from exception import CustomException
+from logger import logging
 
-from src.utils import save_object,evaluate_models
+from utils import save_object,evaluate_models
 
 
 @dataclass
 class ModelTrainerConfig:
-    trained_model_file_path = os.path.join("artifacts", "model1.pkl")
+    trained_model_file_path = os.path.join("artifacts", "model.pkl")
 
 class ModelTrainer:
     def __init__(self):

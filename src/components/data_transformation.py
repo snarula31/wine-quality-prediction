@@ -8,16 +8,16 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
-from src.exception import CustomException
-from src.logger import logging
-from src.components.feature_engineering import FeatureEngineering
+from exception import CustomException
+from logger import logging
+from components.feature_engineering import FeatureEngineering
 from imblearn.combine import SMOTETomek
 
-from src.utils import save_object
+from utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path: str = os.path.join('artifacts', 'preprocessor1.pkl')
+    preprocessor_obj_file_path: str = os.path.join('artifacts', 'preprocessor.pkl')
 
 class DataTransformation:  
     def __init__(self):
